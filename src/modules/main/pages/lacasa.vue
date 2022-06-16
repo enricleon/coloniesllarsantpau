@@ -1,6 +1,5 @@
 <template>
   <section class="content-wrapper">
-    <app-bar></app-bar>
     <div class="content main">La Casa</div>
   </section>
 </template>
