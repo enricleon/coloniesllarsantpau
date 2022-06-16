@@ -4,7 +4,7 @@
       <slide>
         <div class="slide">
           <h1 class="slide__title font-titles" :class="`slide__title--${$mq}`">Llar Sant Pau</h1>
-          <nuxt-img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
+          <img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
         </div>
       </slide>
     </hooper>
@@ -18,16 +18,16 @@
             </p>
           </template>
           <template #right>
-            <nuxt-img preload src="/photos/Llar_Sant_Pau_Menjador.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Menjador.jpg" />
           </template>
         </text-article>
         <text-article :gap="false" highlight="left">
           <template #left>
-            <nuxt-img preload src="/photos/Llar_Sant_Pau_Piscina.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Piscina.jpg" />
           </template>
           <template #right>
             <div class="small-hosues">
-              <nuxt-img v-for="index in 10" :key="index" preload src="/logo/logo-without-circle.svg" />
+              <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
             </div>
           </template>
         </text-article>
@@ -52,13 +52,13 @@
             </div>
           </template>
           <template #right>
-            <nuxt-img preload src="/photos/Llar_Sant_Pau_Entorns.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Entorns.jpg" />
           </template>
         </text-article>
       </section>
       <h2>On som?</h2>
     </div>
-    <nuxt-img preload src="/photos/map.png" />
+    <img src="/photos/map.png" />
   </section>
 </template>
 

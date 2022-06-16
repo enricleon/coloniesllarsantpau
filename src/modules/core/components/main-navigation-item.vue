@@ -1,7 +1,7 @@
 <template>
   <nuxt-link v-if="item.url" :to="{ path: item.url }" :class="{ home: item.url === '/' }" class="main-navigation-item">
     <div v-if="item.imageUrl" class="main-navigation-item__content">
-      <nuxt-img preload :src="item.imageUrl" />
+      <img :src="item.imageUrl" />
     </div>
     <div v-else class="main-navigation-item__content">
       <i :class="item.iconClass"></i>
