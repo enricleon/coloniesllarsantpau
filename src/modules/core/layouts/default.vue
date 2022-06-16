@@ -1,5 +1,5 @@
 <template>
-  <main class="theme-llarsantpau">
+  <main class="main theme-llarsantpau">
     <main-navigation>
       <main-navigation-item v-for="item in navigationItems" :key="item.name" :item="item" />
     </main-navigation>
@@ -38,6 +38,11 @@ export default class Default extends Vue {
         url: '/excursions',
       },
       {
+        name: '',
+        url: '/',
+        imageUrl: '/logo/logo-inverted.svg',
+      },
+      {
         name: this.$t('menu.photos'),
         url: '/fotos',
       },
@@ -54,18 +59,16 @@ export default class Default extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-main {
+.main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
 
   .main-section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: auto;
     justify-content: space-between;
-    background-color: $gray-lightest;
   }
 
   .copyright {
@@ -74,7 +77,7 @@ main {
     gap: 1rem;
 
     .separator {
-      color: $color-secondary-light;
+      color: $gray-base;
     }
 
     a:hover {

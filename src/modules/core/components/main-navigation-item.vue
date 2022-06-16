@@ -1,19 +1,17 @@
 <template>
-  <nuxt-link
-    v-if="item.url"
-    :to="{ path: item.url }"
-    :class="{ collapsed: collapsed, home: item.url === '/' }"
-    class="main-navigation-item"
-  >
-    <div class="main-navigation-item__content">
+  <nuxt-link v-if="item.url" :to="{ path: item.url }" :class="{ home: item.url === '/' }" class="main-navigation-item">
+    <div v-if="item.imageUrl" class="main-navigation-item__content">
+      <nuxt-img preload :src="item.imageUrl" />
+    </div>
+    <div v-else class="main-navigation-item__content">
       <i :class="item.iconClass"></i>
-      <span v-if="!collapsed">{{ item.name }}</span>
+      <span>{{ item.name }}</span>
     </div>
   </nuxt-link>
-  <div v-else class="main-navigation-item" :class="{ collapsed: collapsed }" @click="item.click">
+  <div v-else class="main-navigation-item" @click="item.click">
     <div class="main-navigation-item__content">
       <i :class="item.iconClass"></i>
-      <span v-if="!collapsed">{{ item.name }}</span>
+      <span>{{ item.name }}</span>
     </div>
   </div>
 </template>
@@ -28,65 +26,57 @@ export default class MainNavigationItem extends Vue {
   @Prop({ required: false })
   url!: string;
 
-  @Prop({ required: false, default: false })
-  collapsed!: boolean;
-
   @Prop({ required: true })
-  item!: { iconClass: string; name: string; click: () => void; url: string };
+  item!: { iconClass: string; imageUrl: string; name: string; click: () => void; url: string };
 }
 </script>
 
 <style lang="scss" scoped>
 $border-left-width: 3px;
 $transition-duration: 0.15s;
+$color: $color-primary;
+$color-hover: $color-secondary;
 
 .main-navigation-item {
-  margin-left: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all $transition-duration;
+  display: flex;
+  color: white;
 
-  &.collapsed {
-    margin-left: 0;
-    border-radius: 0;
+  .mobile & {
+    display: flex;
+    color: white;
+    /* height: 100px; */
+    justify-content: center;
+    font-size: 30px;
 
-    .main-navigation-item__content {
-      justify-content: center;
-      padding: 0;
-      gap: 0;
-      border-right: $border-left-width solid transparent;
+    span {
+      padding: 30px;
     }
   }
 
   &__content {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    height: 1.5rem;
-    margin: 1rem 0;
-    padding-left: 2rem;
-    border-left: $border-left-width solid transparent;
+    text-transform: uppercase;
 
-    color: $gray-darkest;
-    font-weight: 500;
-    transition: all $transition-duration;
+    img {
+      height: 100%;
+    }
   }
 
-  &.nuxt-link-exact-active,
+  &.nuxt-link-exact-active:not(.home),
   &.nuxt-link-active:not(.home) {
-    background-color: $coral-lightest;
+    // background-color: $color;
 
     .main-navigation-item__content {
-      color: $coral-base;
-      border-left: $border-left-width solid;
+      color: $color-hover;
     }
   }
 
   &:not(.nuxt-link-exact-active):not(.nuxt-link-active):hover {
-    background-color: $coral-lightest;
+    // background-color: $color;
 
     .main-navigation-item__content {
-      color: $coral-base;
+      color: $color-hover;
     }
   }
 }

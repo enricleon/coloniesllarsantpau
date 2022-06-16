@@ -36,7 +36,7 @@ export default {
 
   /* nuxt.config.js */
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['styles/main.scss', 'static/vendor/phosphor-icons.css'],
+  css: ['styles/main.scss', 'static/vendor/phosphor-icons.css', 'hooper/dist/hooper.css'],
 
   // Source directory
   srcDir: 'src/',
@@ -50,7 +50,11 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/registerServices.ts' }, { src: '~/plugins/vue-screen.ts', ssr: true }],
+  plugins: [
+    { src: '~/plugins/registerServices.ts' },
+    { src: '~/plugins/vue-screen.ts', ssr: true },
+    { src: '~/plugins/vue-awesome-swiper.ts', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: ['@/modules/core/components'],
@@ -65,7 +69,19 @@ export default {
     '@nuxt/postcss8',
     '@nuxtjs/svg',
     '@nuxtjs/style-resources',
+    ['nuxt-mq'],
   ],
+
+  mq: {
+    defaultBreakpoint: 'sm',
+    breakpoints: {
+      xs: 450,
+      sm: 786,
+      md: 1024,
+      lg: 1280,
+      xl: Infinity,
+    },
+  },
 
   googleFonts: {
     preload: true,
@@ -114,6 +130,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    loaders: {
+      scss: { sourceMap: false },
+    },
     postcss: {
       plugins: {
         tailwindcss: {},

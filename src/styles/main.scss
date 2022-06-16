@@ -11,30 +11,30 @@
   h4,
   h5,
   h6 {
-    @apply font-titles;
   }
 
-  h1 {
-    @apply text-5xl;
-    margin-bottom: 3rem;
-  }
-  h2 {
-    @apply text-4xl;
-    margin-bottom: 2.5rem;
-  }
-  h3 {
-    @apply text-3xl;
-    margin-bottom: 2rem;
-  }
-  h4 {
-    @apply text-2xl;
-  }
-  h5 {
-    @apply text-xl;
-  }
-  h6 {
-    @apply text-lg;
-  }
+  // h1 {
+  //   @apply font-aeonik;
+  //   @apply text-5xl;
+  //   margin-bottom: 3rem;
+  // }
+  // h2 {
+  //   @apply text-4xl;
+  //   margin-bottom: 2.5rem;
+  // }
+  // h3 {
+  //   @apply text-3xl;
+  //   margin-bottom: 2rem;
+  // }
+  // h4 {
+  //   @apply text-2xl;
+  // }
+  // h5 {
+  //   @apply text-xl;
+  // }
+  // h6 {
+  //   @apply text-lg;
+  // }
 }
 
 .container {
@@ -60,5 +60,5 @@
 .theme-llarsantpau {
   --color-primary: #{hexToRGBString($color-primary)};
   --color-secondary: #{hexToRGBString($color-secondary)};
-  --color-accent: #{hexToRGBString($color-accent)};
+  // --color-accent: #{hexToRGBString($color-accent)};
 }

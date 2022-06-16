@@ -18,13 +18,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        titles: ['Quicksand', 'sans-serif'],
-        sans: ['Work Sans', 'sans'],
+        titles: ['QueensTrial', 'sans-serif'],
+        footer: ['QueensVarTrial', 'sans-serif'],
+        menu: ['AeonikMedium', 'sans'],
+        sans: ['Aeonik', 'sans'],
+        mono: ['Poppins', 'sans'],
       },
       colors: {
         primary: withOpacityValue('--color-primary'),
         secondary: withOpacityValue('--color-secondary'),
-        accent: withOpacityValue('--color-accent'),
+        // accent: withOpacityValue('--color-accent'),
       },
       // screens: {
       //   xs: 480
