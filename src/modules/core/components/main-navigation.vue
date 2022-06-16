@@ -1,33 +1,22 @@
 <template>
   <div>
-    <div class="main-navigation" :class="responsiveClass">
+    <div class="main-navigation">
       <i v-show="isSmallScreen" class="toggle-menu ph-xl ph-list" @click="toggleMenuVisibility()"></i>
       <section class="navigation-links font-menu" :class="{ expanded: isVisibleMobileMenu }">
         <i v-show="isVisibleMobileMenu" class="close-menu ph-3x ph-x" @click="toggleMenuVisibility()"></i>
         <slot></slot>
       </section>
     </div>
-    <!-- <mq-layout mq="sm">
-      <div class="main-navigation mobile">
-        <i class="ph-xl ph-list" :click="(isVisibleMobileMenu = !isVisibleMobileMenu)"></i>
-        <section class="navigation-links font-menu" :class="{ expanded: isVisibleMobileMenu }">
-          <slot></slot>
-        </section>
-      </div>
-    </mq-layout> -->
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'nuxt-class-component';
+import Component, { mixins } from 'nuxt-class-component';
 
 import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
-@Component({
-  mixins: [ScreenSizes],
-})
-export default class MainNavigation extends ScreenSizes {
+@Component
+export default class MainNavigation extends mixins(ScreenSizes) {
   public isVisibleMobileMenu: boolean = false;
 
   toggleMenuVisibility() {
@@ -46,7 +35,8 @@ export default class MainNavigation extends ScreenSizes {
   height: 10rem;
   z-index: 1;
 
-  &.mobile {
+  .mobile & {
+    position: relative;
     height: 4rem;
     background: black;
     color: white;

@@ -1,57 +1,73 @@
 <template>
-  <section class="content-wrapper">
-    <!-- <app-bar></app-bar>
-    <div class="content">
-      <div class="homepage">En el core</div>
-    </div> -->
+  <section class="content-wrapper homepage">
     <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false">
       <slide>
         <div class="slide">
-          <h1 class="slide__title font-titles" :class="$mq">Llar Sant Pau</h1>
+          <h1 class="slide__title font-titles" :class="`slide__title--${$mq}`">Llar Sant Pau</h1>
           <nuxt-img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
         </div>
       </slide>
     </hooper>
-    <div class="content">
-      <section class="homepage">
-        <div class="homepage__lacasa">
-          <div class="homepage__lacasa-top">
-            <p>
+    <div class="content" :class="`content--${$mq}`">
+      <section class="homepage__lacasa">
+        <text-article class="homepage__lacasa-first" highlight="right">
+          <template #left>
+            <p class="homepage__lacasa-first__text">
               La casa de colònies LLar Sant Pau és una antiga rectoria que es troba situada a les afores del poble de
-              Sant Pau de Segúries.
+              <strong>Sant Pau de Segúries.</strong>
             </p>
-            <nuxt-img src="/photos/Llar_Sant_Pau_Menjador.jpg" />
-          </div>
-          <div class="homepage__lacasa-bottom">
-            <nuxt-img src="/photos/Llar_Sant_Pau_Piscina.jpg" />
-          </div>
-          <div class="homepage__lacasa-top">
-            <p>
-              La Casa de Colònies Llar Sant Pau té una reputació contrastada en aquest sector. Durant molts anys ha
-              acollit a escoles, casals i grups d’esplai, famílies… Oferim un tracte familiar i proper, així com una
-              <span>cuina casolana amb productes de proximitat</span> i tenint en compte totes les opcions alimentàries.
-            </p>
-            <p>
-              Tot això envoltats d’un marc natural incomparable, on podreu gaudir de la natura i de la gran quantitat
-              d’activitats que ofereix la comarca del Ripollès.
-            </p>
-            <nuxt-img src="/photos/Llar_Sant_Pau_Sala_Segon_Pis.jpg" />
-          </div>
-        </div>
-        <div class="homepage__onsom">
-          <h2 class="font-section">On som?</h2>
-          <nuxt-img src="/photos/map.png" />
-        </div>
+          </template>
+          <template #right>
+            <nuxt-img preload src="/photos/Llar_Sant_Pau_Menjador.jpg" />
+          </template>
+        </text-article>
+        <text-article :gap="false" highlight="left">
+          <template #left>
+            <nuxt-img preload src="/photos/Llar_Sant_Pau_Piscina.jpg" />
+          </template>
+          <template #right>
+            <div class="small-hosues">
+              <nuxt-img v-for="index in 10" :key="index" preload src="/logo/logo-without-circle.svg" />
+            </div>
+          </template>
+        </text-article>
+        <text-article class="homepage__lacasa-last" highlight="right">
+          <template #left>
+            <div class="homepage__lacasa-last__text">
+              <p>
+                <span>La Casa de Colònies Llar Sant Pau té una reputació contrastada en aquest sector. </span>
+                <span>Durant molts anys ha acollit a escoles, casals i grups d’esplai, famílies…</span>
+                <span
+                  >Oferim un tracte familiar i proper, així com una
+                  <strong class="color-secondary">cuina casolana amb productes de proximitat</strong> i tenint en compte
+                  totes les opcions alimentàries.</span
+                >
+              </p>
+              <p>
+                <span
+                  >Tot això envoltats d’un marc natural incomparable, on podreu gaudir de la natura i de la gran
+                  quantitat d’activitats que ofereix la comarca del Ripollès.</span
+                >
+              </p>
+            </div>
+          </template>
+          <template #right>
+            <nuxt-img preload src="/photos/Llar_Sant_Pau_Entorns.jpg" />
+          </template>
+        </text-article>
       </section>
+      <h2>On som?</h2>
     </div>
+    <nuxt-img preload src="/photos/map.png" />
   </section>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component, { Getter } from 'nuxt-class-component';
+import Vue, { VueConstructor } from 'vue';
+import Component, { Getter, mixins } from 'nuxt-class-component';
 
 import { Hooper, Slide } from 'hooper'; // import slider components
+import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
 @Component({
   components: {
@@ -59,16 +75,63 @@ import { Hooper, Slide } from 'hooper'; // import slider components
     Slide,
   },
 })
-export default class HomePage extends Vue {}
+export default class HomePage extends mixins(ScreenSizes) {}
 </script>
 
 <style lang="scss" scoped>
 .homepage {
   display: flex;
   flex-direction: column;
+  background: $color-primary;
+  color: white;
 
   &__lacasa {
-    &-top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    &-last {
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        font-size: 1.5rem;
+      }
+    }
+
+    .small-hosues {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1rem;
+
+      img {
+        max-width: 60px;
+        align-self: flex-end;
+      }
+    }
+
+    .desktop & {
+      &-first {
+        margin-bottom: -5rem;
+        z-index: 1;
+
+        &__text {
+          padding-bottom: 6rem;
+        }
+      }
+
+      &-last {
+        margin-top: 3rem;
+      }
+
+      .small-hosues {
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+      }
     }
   }
 }
@@ -90,25 +153,23 @@ export default class HomePage extends Vue {}
       display: flex;
       justify-content: center;
 
-      &.sm {
+      &--sm {
         font-size: 6rem;
       }
 
-      &.md {
+      &--md {
         font-size: 8rem;
       }
 
-      &.lg {
+      &--lg {
         font-size: 10rem;
       }
 
-      &.xl {
+      &--xl {
         font-size: 12rem;
       }
 
-      &.md,
-      &.lg,
-      &.xl {
+      &--desktop {
         margin-top: 160px;
       }
     }

@@ -18,10 +18,9 @@
   //   @apply text-5xl;
   //   margin-bottom: 3rem;
   // }
-  // h2 {
-  //   @apply text-4xl;
-  //   margin-bottom: 2.5rem;
-  // }
+  h2 {
+    @apply text-6xl;
+  }
   // h3 {
   //   @apply text-3xl;
   //   margin-bottom: 2rem;
@@ -47,8 +46,24 @@
 }
 
 .content {
-  margin: 1rem 3rem;
-  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+
+  &--sm {
+    padding: 2rem 2.5rem;
+  }
+
+  &--md {
+    padding: 3rem 3.75rem;
+  }
+
+  &--lg {
+    padding: 4rem 5rem;
+  }
+
+  &--xl {
+    padding: 5rem 6.25rem;
+  }
 }
 
 .error {
@@ -61,4 +76,16 @@
   --color-primary: #{hexToRGBString($color-primary)};
   --color-secondary: #{hexToRGBString($color-secondary)};
   // --color-accent: #{hexToRGBString($color-accent)};
+
+  .color-primary {
+    color: $color-primary;
+  }
+
+  .color-secondary {
+    color: $color-secondary;
+  }
+
+  // .color-accent {
+  //   color: var(--color-accent);
+  // }
 }

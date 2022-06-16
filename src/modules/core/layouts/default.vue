@@ -1,5 +1,5 @@
 <template>
-  <main class="main theme-llarsantpau">
+  <main class="main theme-llarsantpau" :class="responsiveClass">
     <main-navigation>
       <main-navigation-item v-for="item in navigationItems" :key="item.name" :item="item" />
     </main-navigation>
@@ -19,10 +19,11 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'nuxt-class-component';
+import Component, { mixins } from 'nuxt-class-component';
+import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
-@Component({})
-export default class Default extends Vue {
+@Component
+export default class Default extends mixins(ScreenSizes) {
   get navigationItems() {
     return [
       {
