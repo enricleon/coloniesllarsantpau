@@ -1,5 +1,5 @@
 <template>
-  <main class="theme-llarsantpau">
+  <main class="main theme-llarsantpau" :class="responsiveClass">
     <main-navigation>
       <main-navigation-item v-for="item in navigationItems" :key="item.name" :item="item" />
     </main-navigation>
@@ -19,10 +19,11 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'nuxt-class-component';
+import Component, { mixins } from 'nuxt-class-component';
+import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
-@Component({})
-export default class Default extends Vue {
+@Component
+export default class Default extends mixins(ScreenSizes) {
   get navigationItems() {
     return [
       {
@@ -36,6 +37,11 @@ export default class Default extends Vue {
       {
         name: this.$t('menu.trekking'),
         url: '/excursions',
+      },
+      {
+        name: '',
+        url: '/',
+        imageUrl: '/logo/logo-inverted.svg',
       },
       {
         name: this.$t('menu.photos'),
@@ -54,18 +60,16 @@ export default class Default extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-main {
+.main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
 
   .main-section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: auto;
     justify-content: space-between;
-    background-color: $gray-lightest;
   }
 
   .copyright {
@@ -74,7 +78,7 @@ main {
     gap: 1rem;
 
     .separator {
-      color: $color-secondary-light;
+      color: $gray-base;
     }
 
     a:hover {

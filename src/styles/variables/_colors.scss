@@ -6,40 +6,16 @@ $gray-dark: #b5b6b7;
 $gray-darker: #8b8d8f;
 $gray-darkest: #3f4042;
 
-$midnight-lightest: #e2e3f3;
-$midnight-lighter: #abaedd;
-$midnight-light: #757ac6;
-$midnight-base: #454baa;
-$midnight-dark: #2f3373;
-$midnight-darker: #191b3d;
-$midnight-darkest: #030307;
+$blue-base: #3f4d99;
+$yellow-base: #e3b130;
+$green-base: #325b45;
+$red-base: #e06c52;
+$brown-base: #b19f72;
 
-$coral-lightest: #fff0ea;
-$coral-lighter: #fdbca7;
-$coral-light: #fb845c;
-$coral-base: #fa5e2a;
-$coral-dark: #f94c11;
-$coral-darker: #eb3f06;
-$coral-darkest: #d23905;
+$color-primary: $blue-base;
+$color-secondary: $yellow-base;
 
-$pink-lightest: #fee8f3;
-$pink-lighter: #fdadd3;
-$pink-light: #fb71b4;
-$pink-base: #f93595;
-$pink-dark: #eb0775;
-$pink-darker: #af0558;
-$pink-darkest: #74033a;
-
-$color-primary: $midnight-darker;
-
-$color-secondary-lighter: $coral-lightest;
-$color-secondary-light: $coral-lighter;
-$color-secondary: $coral-light;
-$color-secondary-dark: $coral-base;
-$color-secondary-darker: $coral-dark;
-$color-secondary-darkest: $coral-darker;
-
-$color-accent: $pink-light;
+// $color-accent: $pink-light;
 
 $status-color-indicator-positive: #4bd28f;
 $status-color-indicator: #d8e2e9;

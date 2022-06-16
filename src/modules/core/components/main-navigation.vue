@@ -1,118 +1,86 @@
 <template>
-  <div :class="{ collapsed: collapsed }" class="main-navigation">
-    <section class="navigation-brand">
-      <div class="brand-icon">
-        <nuxt-img preload src="/logo/llar_sant_pau.svg" />
-      </div>
-      <div class="brand-logo">
-        <nuxt-img preload src="/logo/llar_sant_pau_horizontal.svg" />
-      </div>
-    </section>
-    <section class="navigation-links">
-      <slot></slot>
-    </section>
-    <i
-      :class="{ 'ph-caret-double-right': collapsed, 'ph-caret-double-left': !collapsed }"
-      class="collapse-button ph-sm"
-      @click="$emit('toggle')"
-    >
-    </i>
+  <div>
+    <div class="main-navigation">
+      <i v-show="isSmallScreen" class="toggle-menu ph-xl ph-list" @click="toggleMenuVisibility()"></i>
+      <section class="navigation-links font-menu" :class="{ expanded: isVisibleMobileMenu }">
+        <i v-show="isVisibleMobileMenu" class="close-menu ph-3x ph-x" @click="toggleMenuVisibility()"></i>
+        <slot></slot>
+      </section>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'nuxt-class-component';
-import { State } from 'vuex-class';
-import { Prop } from 'vue-property-decorator';
+import Component, { mixins } from 'nuxt-class-component';
 
-@Component({})
-export default class MainNavigation extends Vue {
-  @State('count') count: any;
+import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
-  @Prop({ required: false, default: false })
-  collapsed!: boolean;
+@Component
+export default class MainNavigation extends mixins(ScreenSizes) {
+  public isVisibleMobileMenu: boolean = false;
+
+  toggleMenuVisibility() {
+    this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .main-navigation {
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
   width: 100%;
-  max-width: 19rem;
-  padding-top: 1.5rem;
-  padding-right: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  z-index: 1;
 
-  filter: drop-shadow(-3px 0px 6px $gray-base);
-  background-color: white;
-  z-index: 402;
+  .mobile & {
+    position: relative;
+    height: 4rem;
+    background: black;
+    color: white;
+    justify-content: start;
 
-  position: relative;
-
-  &.collapsed {
-    padding-right: 0;
-    max-width: 4rem;
-
-    .navigation-brand {
-      justify-content: center;
+    .navigation-links {
+      width: 0;
+      flex-direction: column;
+      height: auto;
+      width: 100%;
       gap: 0;
-      margin-right: 0;
-      margin-left: 0;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      transition: right 0.5s;
+      background: black;
+      justify-content: center;
+      right: 100%;
 
-      .brand-logo {
-        display: none;
+      &.expanded {
+        right: 0;
       }
     }
   }
 
-  .navigation-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 2rem;
-    margin-right: 1rem;
+  .toggle-menu {
+    padding: 20px;
+    cursor: pointer;
+  }
 
-    .brand-icon {
-      width: 2rem;
-    }
-
-    .brand-logo {
-      width: 10rem;
-    }
+  .close-menu {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    align-self: flex-end;
   }
 
   .navigation-links {
     display: flex;
-    flex-direction: column;
-  }
-
-  .collapse-button {
-    position: absolute;
-    bottom: 3rem;
-    right: 0;
-    margin-right: -15px;
-    padding: 8px;
-    border-radius: 50%;
-    background: white;
-    filter: drop-shadow(0px 2px 1px $gray-dark);
-    cursor: pointer;
-    transition: 0.15s bottom;
-
-    &:before {
-      color: $gray-darker;
-    }
-
-    &:hover {
-      filter: drop-shadow(0px 1px 1px $gray-darker);
-      bottom: calc(3rem - 2px);
-
-      &:before {
-        color: black;
-      }
-    }
+    align-content: center;
+    gap: 3rem;
+    height: 70px;
   }
 }
 </style>
