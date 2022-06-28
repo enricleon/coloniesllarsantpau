@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper thehouse">
     <div class="content main">La Casa</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class TheHouse extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.thehouse {
+}
+</style>

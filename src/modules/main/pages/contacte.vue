@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper contact">
     <div class="content main">Contacte</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class Contact extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.contact {
+}
+</style>

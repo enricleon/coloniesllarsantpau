@@ -82,7 +82,7 @@ export default class HomePage extends mixins(ScreenSizes) {}
 .homepage {
   display: flex;
   flex-direction: column;
-  background: $color-primary;
+  background: var(--color-primary);
   color: white;
 
   &__lacasa {

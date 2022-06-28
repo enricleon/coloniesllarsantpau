@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper services">
     <div class="content main">Serveis</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class Services extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.services {
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper photos">
     <div class="content main">Fotos</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class Photos extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.photos {
+}
+</style>

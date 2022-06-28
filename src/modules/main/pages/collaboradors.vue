@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper collaborators">
     <div class="content main">Col·laboradors</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class Collaborators extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.collaborators {
+}
+</style>

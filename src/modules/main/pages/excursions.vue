@@ -1,5 +1,5 @@
 <template>
-  <section class="content-wrapper">
+  <section class="content-wrapper trekking">
     <div class="content main">Excursions</div>
   </section>
 </template>
@@ -26,4 +26,7 @@ export default class Trekking extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.trekking {
+}
+</style>

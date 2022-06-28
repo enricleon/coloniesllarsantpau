@@ -34,16 +34,17 @@ export default class MainNavigationItem extends Vue {
 <style lang="scss" scoped>
 $border-left-width: 3px;
 $transition-duration: 0.15s;
-$color: $color-primary;
-$color-hover: $color-secondary;
+$color: white;
+
+$color-hover: var(--color-secondary);
 
 .main-navigation-item {
   display: flex;
-  color: white;
+  color: $color;
 
   .mobile & {
     display: flex;
-    color: white;
+    color: $color;
     /* height: 100px; */
     justify-content: center;
     font-size: 30px;
@@ -65,16 +66,12 @@ $color-hover: $color-secondary;
 
   &.nuxt-link-exact-active:not(.home),
   &.nuxt-link-active:not(.home) {
-    // background-color: $color;
-
     .main-navigation-item__content {
       color: $color-hover;
     }
   }
 
   &:not(.nuxt-link-exact-active):not(.nuxt-link-active):hover {
-    // background-color: $color;
-
     .main-navigation-item__content {
       color: $color-hover;
     }
