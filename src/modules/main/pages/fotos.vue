@@ -1,5 +1,6 @@
 <template>
   <section class="content-wrapper photos">
+    <app-bar>Fotos</app-bar>
     <div class="content main">Fotos</div>
   </section>
 </template>

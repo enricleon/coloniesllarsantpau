@@ -1,5 +1,6 @@
 <template>
   <section class="content-wrapper collaborators">
+    <app-bar>Col·laboradors</app-bar>
     <div class="content main">Col·laboradors</div>
   </section>
 </template>

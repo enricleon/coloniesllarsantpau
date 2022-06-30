@@ -1,5 +1,6 @@
 <template>
   <section class="content-wrapper contact">
+    <app-bar>Contacte</app-bar>
     <div class="content main">Contacte</div>
   </section>
 </template>

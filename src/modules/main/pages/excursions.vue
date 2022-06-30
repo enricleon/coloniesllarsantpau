@@ -1,5 +1,6 @@
 <template>
   <section class="content-wrapper trekking">
+    <app-bar>Excursions</app-bar>
     <div class="content main">Excursions</div>
   </section>
 </template>

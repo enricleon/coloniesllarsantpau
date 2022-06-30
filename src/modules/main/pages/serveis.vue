@@ -1,5 +1,6 @@
 <template>
   <section class="content-wrapper services">
+    <app-bar>Serveis</app-bar>
     <div class="content main">Serveis</div>
   </section>
 </template>
