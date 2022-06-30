@@ -1,8 +1,11 @@
 <template>
   <section class="app-bar">
-    <span class="font-titles"><slot></slot></span>
-    <span class="font-titles"><slot></slot></span>
-    <span class="font-titles"><slot></slot></span>
+    <div class="app-bar__line"></div>
+    <div class="app-bar__content">
+      <span class="font-titles"><slot></slot></span>
+      <span class="font-titles"><slot></slot></span>
+      <span class="font-titles"><slot></slot></span>
+    </div>
   </section>
 </template>
 
@@ -21,14 +24,26 @@ export default class AppBar extends Vue {}
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
   gap: 1rem;
 
-  position: sticky;
-  top: 0;
+  &__line {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+
+  &__content {
+    background: var(--color-primary);
+    padding: 0 2rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 1;
+  }
 
   .font-titles {
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 3rem;
     font-style: italic;
 
     color: var(--color-secondary);

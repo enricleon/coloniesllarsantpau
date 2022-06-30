@@ -1,7 +1,11 @@
 <template>
   <section class="content-wrapper thehouse">
     <app-bar>La casa</app-bar>
-    <div class="content main">La Casa</div>
+    <div class="thehouse__content">
+      <photo-text title="Planta Baixa" image-url="/photos/Llar_Sant_Pau_Entrada.jpg"></photo-text>
+      <photo-text title="Primer pis" image-url="/photos/Llar_Sant_Pau_Habitacio_28.jpg"></photo-text>
+      <photo-text title="Segon pis" image-url="/photos/Llar_Sant_Pau_Habitacio_26.jpg"></photo-text>
+    </div>
   </section>
 </template>
 

@@ -73,7 +73,7 @@ export default {
   ],
 
   mq: {
-    defaultBreakpoint: 'sm',
+    defaultBreakpoint: 'lg',
     breakpoints: {
       xs: 450,
       sm: 786,
