@@ -1,6 +1,9 @@
 <template>
   <section class="content-wrapper contact">
     <app-bar>Contacte</app-bar>
+    <sp-text class="contact__subtitle font-medium" :importance="6" size="xs"
+      >Per reserves i més informació contacteu amb:</sp-text
+    >
     <div class="content main">Contacte</div>
   </section>
 </template>
@@ -29,5 +32,9 @@ export default class Contact extends Vue {
 
 <style lang="scss" scoped>
 .contact {
+  &__subtitle {
+    color: white;
+    text-align: center;
+  }
 }
 </style>

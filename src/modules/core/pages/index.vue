@@ -3,14 +3,16 @@
     <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false">
       <slide>
         <div class="slide">
-          <h1 class="slide__title font-titles" :class="`slide__title--${$mq}`">Llar Sant Pau</h1>
+          <sp-text class="slide__title font-titles" :class="`slide__title--${$mq}`" :importance="1" size="xxl"
+            >Llar Sant Pau</sp-text
+          >
           <img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
         </div>
       </slide>
     </hooper>
     <div class="content" :class="`content--${$mq}`">
       <section class="homepage__lacasa">
-        <text-article class="homepage__lacasa-first" highlight="right">
+        <sp-text-article class="homepage__lacasa-first" highlight="right">
           <template #left>
             <p class="homepage__lacasa-first__text">
               La casa de colònies LLar Sant Pau és una antiga rectoria que es troba situada a les afores del poble de
@@ -20,18 +22,20 @@
           <template #right>
             <img src="/photos/Llar_Sant_Pau_Menjador.jpg" />
           </template>
-        </text-article>
-        <text-article :gap="false" highlight="left">
+        </sp-text-article>
+        <sp-text-article :gap="false" highlight="left">
           <template #left>
             <img src="/photos/Llar_Sant_Pau_Piscina.jpg" />
           </template>
           <template #right>
-            <div class="small-hosues">
-              <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
+            <div class="small-houses__wrapper">
+              <div class="small-hosues">
+                <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
+              </div>
             </div>
           </template>
-        </text-article>
-        <text-article class="homepage__lacasa-last" highlight="right">
+        </sp-text-article>
+        <sp-text-article class="homepage__lacasa-last" highlight="right">
           <template #left>
             <div class="homepage__lacasa-last__text">
               <p>
@@ -54,7 +58,7 @@
           <template #right>
             <img src="/photos/Llar_Sant_Pau_Entorns.jpg" />
           </template>
-        </text-article>
+        </sp-text-article>
       </section>
       <h2>On som?</h2>
     </div>
@@ -99,6 +103,11 @@ export default class HomePage extends mixins(ScreenSizes) {}
 
         font-size: 1.5rem;
       }
+    }
+
+    .small-houses__wrapper {
+      position: relative;
+      flex: 1;
     }
 
     .small-hosues {
@@ -147,27 +156,10 @@ export default class HomePage extends mixins(ScreenSizes) {}
 
     &__title {
       color: white;
-      font-size: 4rem;
       position: absolute;
       width: 100%;
       display: flex;
       justify-content: center;
-
-      &--sm {
-        font-size: 6rem;
-      }
-
-      &--md {
-        font-size: 8rem;
-      }
-
-      &--lg {
-        font-size: 10rem;
-      }
-
-      &--xl {
-        font-size: 12rem;
-      }
 
       &--desktop {
         margin-top: 160px;

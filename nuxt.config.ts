@@ -73,6 +73,10 @@ export default {
     ['nuxt-mq'],
   ],
 
+  device: {
+    refreshOnResize: true,
+  },
+
   mq: {
     defaultBreakpoint: 'lg',
     breakpoints: {

@@ -1,7 +1,7 @@
 <template>
-  <section class="photo-text">
-    <h4 class="photo-text__title font-titles">{{ title }}</h4>
-    <div class="photo-text__image" :style="{ backgroundImage: `url(${imageUrl})` }" />
+  <section class="sp-photo-text">
+    <sp-text class="sp-photo-text__title font-titles" :importance="4" size="lg">{{ title }}</sp-text>
+    <div class="sp-photo-text__image" :style="{ backgroundImage: `url(${imageUrl})` }" />
   </section>
 </template>
 
@@ -22,16 +22,16 @@ export default class TextArticle extends mixins(ScreenSizes) {
 </script>
 
 <style lang="scss" scoped>
-.photo-text {
+.sp-photo-text {
   display: flex;
   position: relative;
 
   &__title {
     position: absolute;
     color: white;
-    font-size: 5rem;
     top: 0;
     bottom: 0;
+    text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;

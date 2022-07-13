@@ -1,5 +1,5 @@
 <template>
-  <section class="text-photo" :class="`text-photo--${$mq} ${gap ? '' : 'text-photo--nogap'}`">
+  <section class="sp-text-article" :class="`sp-text-article--${$mq} ${gap ? '' : 'sp-text-article--nogap'}`">
     <div class="left" :class="`${highlight === 'left' ? 'highlight' : ''}`">
       <slot name="left"></slot>
     </div>
@@ -26,7 +26,7 @@ export default class TextArticle extends mixins(ScreenSizes) {
 </script>
 
 <style lang="scss" scoped>
-.text-photo {
+.sp-text-article {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -73,7 +73,6 @@ export default class TextArticle extends mixins(ScreenSizes) {
   .left {
     display: flex;
     flex-direction: column;
-    position: relative;
 
     &.highlight {
       flex: 3;

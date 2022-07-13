@@ -1,20 +1,24 @@
 <template>
   <section class="app-bar">
     <div class="app-bar__line"></div>
-    <div class="app-bar__content">
-      <h6 class="font-titles"><slot></slot></h6>
-      <h6 class="font-titles"><slot></slot></h6>
-      <h6 class="font-titles"><slot></slot></h6>
+    <div v-if="!isSmallScreen" class="app-bar__content">
+      <sp-text class="font-titles" :importance="4" size="md"><slot></slot></sp-text>
+      <sp-text class="font-titles" :importance="4" size="md"><slot></slot></sp-text>
+      <sp-text class="font-titles" :importance="4" size="md"><slot></slot></sp-text>
+    </div>
+    <div v-else class="app-bar__content">
+      <sp-text class="font-titles" :importance="4" size="md"><slot></slot></sp-text>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'nuxt-class-component';
+import Component, { mixins } from 'nuxt-class-component';
+import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
-@Component({})
-export default class AppBar extends Vue {}
+@Component
+export default class AppBar extends mixins(ScreenSizes) {}
 </script>
 
 <style lang="scss" scoped>
@@ -24,6 +28,7 @@ export default class AppBar extends Vue {}
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   gap: 1rem;
 

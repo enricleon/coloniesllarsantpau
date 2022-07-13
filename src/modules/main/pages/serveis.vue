@@ -1,6 +1,9 @@
 <template>
   <section class="content-wrapper services">
     <app-bar>Serveis</app-bar>
+    <sp-text class="services__subtitle font-medium" :importance="6" size="xs"
+      >Durant la vostra estancia podreu gaudir de tot tipus de serveis:</sp-text
+    >
     <div class="content main">Serveis</div>
   </section>
 </template>
@@ -29,5 +32,9 @@ export default class Services extends Vue {
 
 <style lang="scss" scoped>
 .services {
+  &__subtitle {
+    color: white;
+    text-align: center;
+  }
 }
 </style>

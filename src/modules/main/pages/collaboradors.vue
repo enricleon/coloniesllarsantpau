@@ -1,6 +1,9 @@
 <template>
   <section class="content-wrapper collaborators">
     <app-bar>Col·laboradors</app-bar>
+    <sp-text class="collaborators__subtitle font-medium" :importance="6" size="xs"
+      >La casa ofereix activitats a través d’empreses externes. Algunes d’elles són:</sp-text
+    >
     <div class="content main">Col·laboradors</div>
   </section>
 </template>
@@ -29,5 +32,9 @@ export default class Collaborators extends Vue {
 
 <style lang="scss" scoped>
 .collaborators {
+  &__subtitle {
+    color: white;
+    text-align: center;
+  }
 }
 </style>
