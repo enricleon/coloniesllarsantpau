@@ -69,6 +69,7 @@ export default {
     '@nuxt/postcss8',
     '@nuxtjs/svg',
     '@nuxtjs/style-resources',
+    '@nuxtjs/device',
     ['nuxt-mq'],
   ],
 

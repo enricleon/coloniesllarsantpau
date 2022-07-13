@@ -1,7 +1,9 @@
 <template>
   <main
     class="main theme-llarsantpau"
-    :class="`${responsiveClass} ${containerClass.map((classItem) => 'theme-llarsantpau--' + classItem).join(' ')}`"
+    :class="`${responsiveClass} ${$mq} ${containerClass
+      .map((classItem) => 'theme-llarsantpau--' + classItem)
+      .join(' ')}`"
   >
     <main-navigation>
       <main-navigation-item v-for="item in navigationItems" :key="item.name" :item="item" />

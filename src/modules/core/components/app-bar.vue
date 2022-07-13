@@ -2,9 +2,9 @@
   <section class="app-bar">
     <div class="app-bar__line"></div>
     <div class="app-bar__content">
-      <span class="font-titles"><slot></slot></span>
-      <span class="font-titles"><slot></slot></span>
-      <span class="font-titles"><slot></slot></span>
+      <h6 class="font-titles"><slot></slot></h6>
+      <h6 class="font-titles"><slot></slot></h6>
+      <h6 class="font-titles"><slot></slot></h6>
     </div>
   </section>
 </template>
