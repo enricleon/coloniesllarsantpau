@@ -59,8 +59,8 @@
             <img src="/photos/Llar_Sant_Pau_Entorns.jpg" />
           </template>
         </sp-text-article>
+        <h2>On som?</h2>
       </section>
-      <h2>On som?</h2>
     </div>
     <img src="/photos/map.png" />
   </section>
@@ -111,7 +111,7 @@ export default class HomePage extends mixins(ScreenSizes) {}
     }
 
     .small-hosues {
-      display: flex;
+      display: none;
       flex-direction: row;
       align-items: flex-end;
       gap: 1rem;
@@ -137,6 +137,7 @@ export default class HomePage extends mixins(ScreenSizes) {}
       }
 
       .small-hosues {
+        display: flex;
         position: absolute;
         bottom: 0;
         left: 1rem;
@@ -152,7 +153,8 @@ export default class HomePage extends mixins(ScreenSizes) {}
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 1150px;
+    height: 1500px;
+    max-height: 66vw;
 
     &__title {
       color: white;

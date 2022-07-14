@@ -4,7 +4,13 @@
     <sp-text class="contact__subtitle font-medium" :importance="6" size="xs"
       >Per reserves i més informació contacteu amb:</sp-text
     >
-    <div class="content main">Contacte</div>
+    <div class="content main" :class="`content--${$mq}`">
+      <div class="contact__info">
+        <sp-text class="font-medium" :importance="6" size="xs">Cèlia Comellas Guix</sp-text>
+        <sp-text class="font-medium" :importance="6" size="xs">info@coloniesllarsantpau.com</sp-text>
+        <sp-text class="font-medium" :importance="6" size="xs">654021143 / 972 721 270</sp-text>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -32,9 +38,21 @@ export default class Contact extends Vue {
 
 <style lang="scss" scoped>
 .contact {
+  color: white;
+
   &__subtitle {
     color: white;
     text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 20%;
+    border: 5px solid white;
+    border-radius: 200px;
   }
 }
 </style>
