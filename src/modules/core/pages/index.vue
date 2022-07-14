@@ -6,7 +6,7 @@
           <sp-text class="slide__title font-titles" :class="`slide__title--${$mq}`" :importance="1" size="xxl"
             >Llar Sant Pau</sp-text
           >
-          <img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
+          <img src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
         </div>
       </slide>
     </hooper>

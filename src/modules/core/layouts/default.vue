@@ -83,7 +83,7 @@ export default class Default extends mixins(ScreenSizes) {
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 
   .main-section {
     display: flex;

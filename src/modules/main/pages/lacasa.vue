@@ -40,7 +40,7 @@
           </div>
         </template>
         <template #right>
-          <img class="thehouse__description-background" src="/wheat-background.svg" />
+          <img class="thehouse__description-background" src="/thehouse-background.svg" />
         </template>
       </sp-text-article>
     </div>
