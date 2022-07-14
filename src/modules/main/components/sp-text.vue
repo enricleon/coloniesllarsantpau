@@ -34,13 +34,15 @@ export default class SpText extends mixins(ScreenSizes) {
   @Prop({ required: false, default: 0 })
   importance!: number;
 
-  @Prop({ required: false, default: 'lg' })
+  @Prop({ required: false })
   size!: string;
 }
 </script>
 
 <style lang="scss" scoped>
 .sp-text {
+  font-size: 1.5rem;
+
   &--xs {
     &.size--xs {
       font-size: 1rem;

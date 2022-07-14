@@ -20,7 +20,9 @@ export default class MainNavigation extends mixins(ScreenSizes) {
   public isVisibleMobileMenu: boolean = false;
 
   toggleMenuVisibility() {
-    this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+    if (this.isSmallScreen) {
+      this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+    }
   }
 }
 </script>

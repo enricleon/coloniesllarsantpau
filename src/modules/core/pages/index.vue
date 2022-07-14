@@ -1,12 +1,10 @@
 <template>
   <section class="content-wrapper homepage">
-    <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false">
+    <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false" :mouse-drag="false">
       <slide>
         <div class="slide">
-          <sp-text class="slide__title font-titles" :class="`slide__title--${$mq}`" :importance="1" size="xxl"
-            >Llar Sant Pau</sp-text
-          >
-          <img src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
+          <sp-text class="slide__title font-titles fade-in-text" :importance="1" size="xxl">Llar Sant Pau</sp-text>
+          <img class="fade-in-image" src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
         </div>
       </slide>
     </hooper>
@@ -83,11 +81,28 @@ export default class HomePage extends mixins(ScreenSizes) {}
 </script>
 
 <style lang="scss" scoped>
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-image {
+  animation: fadeIn 0.3s;
+}
+.fade-in-text {
+  animation: fadeIn 0.6s;
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
   background: var(--color-primary);
   color: white;
+  margin-top: calc(($main-navigation-height-desktop + 1px) * -1);
 
   &__lacasa {
     display: flex;
@@ -147,7 +162,8 @@ export default class HomePage extends mixins(ScreenSizes) {}
 }
 
 .slider {
-  height: auto;
+  height: 1500px;
+  max-height: 66vw;
 
   .slide {
     display: flex;
@@ -162,8 +178,9 @@ export default class HomePage extends mixins(ScreenSizes) {}
       width: 100%;
       display: flex;
       justify-content: center;
+      z-index: 1;
 
-      &--desktop {
+      .desktop & {
         margin-top: 160px;
       }
     }

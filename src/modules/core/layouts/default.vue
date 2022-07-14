@@ -96,12 +96,6 @@ export default class Default extends mixins(ScreenSizes) {
     padding-top: $main-navigation-height-desktop;
   }
 
-  &.theme-llarsantpau--homepage.desktop {
-    .main-section {
-      padding-top: 0;
-    }
-  }
-
   .copyright {
     display: flex;
     justify-content: flex-end;
