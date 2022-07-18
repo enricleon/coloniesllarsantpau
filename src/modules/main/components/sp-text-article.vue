@@ -16,7 +16,7 @@ import { Prop } from 'vue-property-decorator';
 import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
 @Component
-export default class TextArticle extends mixins(ScreenSizes) {
+export default class SpTextArticle extends mixins(ScreenSizes) {
   @Prop({ required: false, default: true })
   gap!: boolean;
 

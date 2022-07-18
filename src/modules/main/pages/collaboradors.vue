@@ -6,7 +6,7 @@
     >
     <div class="content main" :class="`content--${$mq}`">
       <section class="collaborators__list">
-        <sp-colaborador v-for="item in collaborators" :key="item.title" :item="item"></sp-colaborador>
+        <sp-collaborator v-for="item in collaborators" :key="item.title" :item="item"></sp-collaborator>
       </section>
     </div>
   </section>

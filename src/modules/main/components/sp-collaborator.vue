@@ -1,13 +1,13 @@
 <template>
-  <section class="sp-colaborador">
-    <sp-text class="sp-colaborador__title font-medium" :importance="4" size="md">{{ item.title }}</sp-text>
-    <div class="sp-colaborador__info">
-      <sp-text class="sp-colaborador__info-description font-medium" :importance="5">{{ item.description }}</sp-text>
-      <div class="sp-colaborador__info-contact">
-        <sp-text class="sp-colaborador__info-contact__field phone font-titles">{{ item.phone }}</sp-text>
-        <sp-text class="sp-colaborador__info-contact__field mobile font-titles">{{ item.mobile }}</sp-text>
-        <sp-text class="sp-colaborador__info-contact__field email font-titles">{{ item.email }}</sp-text>
-        <sp-text class="sp-colaborador__info-contact__field website font-titles">{{ item.website }}</sp-text>
+  <section class="sp-collaborator">
+    <sp-text class="sp-collaborator__title font-medium" :importance="4" size="md">{{ item.title }}</sp-text>
+    <div class="sp-collaborator__info">
+      <sp-text class="sp-collaborator__info-description font-medium" :importance="5">{{ item.description }}</sp-text>
+      <div class="sp-collaborator__info-contact">
+        <sp-text class="sp-collaborator__info-contact__field phone font-titles">{{ item.phone }}</sp-text>
+        <sp-text class="sp-collaborator__info-contact__field mobile font-titles">{{ item.mobile }}</sp-text>
+        <sp-text class="sp-collaborator__info-contact__field email font-titles">{{ item.email }}</sp-text>
+        <sp-text class="sp-collaborator__info-contact__field website font-titles">{{ item.website }}</sp-text>
       </div>
     </div>
   </section>
@@ -19,7 +19,7 @@ import { Prop } from 'vue-property-decorator';
 import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 
 @Component
-export default class TextArticle extends mixins(ScreenSizes) {
+export default class SpCollaborator extends mixins(ScreenSizes) {
   @Prop({ required: true })
   item!: {
     title: string;
@@ -33,7 +33,7 @@ export default class TextArticle extends mixins(ScreenSizes) {
 </script>
 
 <style lang="scss" scoped>
-.sp-colaborador {
+.sp-collaborator {
   display: flex;
   flex-direction: column;
   color: white;
