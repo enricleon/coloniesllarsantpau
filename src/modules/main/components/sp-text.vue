@@ -43,6 +43,10 @@ export default class SpText extends mixins(ScreenSizes) {
 .sp-text {
   font-size: 1.5rem;
 
+  &.size--xxs {
+    font-size: 1rem;
+  }
+
   &--xs {
     &.size--xs {
       font-size: 1rem;
