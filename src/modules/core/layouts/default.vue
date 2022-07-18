@@ -13,13 +13,45 @@
     </main-navigation>
     <section class="main-section">
       <nuxt />
-      <footer>
+      <footer class="footer">
+        <section class="content links">
+          <div class="links__item">
+            <img class="footer-logo" src="/logo/logo-circle-text.png" />
+          </div>
+          <div class="links__item">
+            <sp-text class="font-titles">Info</sp-text>
+            <nuxt-link :to="{ path: 'fotos' }">
+              <sp-text class="font-sans">Galeria de fotos</sp-text>
+            </nuxt-link>
+            <nuxt-link :to="{ path: 'lacasa' }">
+              <sp-text class="font-sans">Descripció de la casa</sp-text>
+            </nuxt-link>
+          </div>
+          <div class="links__item">
+            <sp-text class="font-titles">Legal</sp-text>
+            <nuxt-link :to="{ path: '' }">
+              <sp-text class="font-sans">Avís Legal</sp-text>
+            </nuxt-link>
+            <nuxt-link :to="{ path: '' }">
+              <sp-text class="font-sans">Política de cookies</sp-text>
+            </nuxt-link>
+          </div>
+          <div class="links__item">
+            <sp-text class="font-titles">Contacte</sp-text>
+            <sp-text class="font-sans"
+              ><a href="tel:654021143">654021143</a> / <a href="tel:972 721 270">972 721 270</a></sp-text
+            >
+            <sp-text class="font-sans"
+              ><a href="mailto: info@coloniesllarsantpau.com">info@coloniesllarsantpau.com</a></sp-text
+            >
+          </div>
+        </section>
         <section class="content copyright">
-          <a href="https://www.llarsantpau.cat/">Llar Sant Pau</a>
-          <span class="separator">|</span>
-          <a href="https://www.llarsantpau.cat/privacy-policy/">Política de privacitat</a>
-          <span class="separator">|</span>
-          <span>© Copyright 2022</span>
+          <nuxt-link :to="{ path: '/' }">© 2021 LLAR SANT PAU</nuxt-link>
+          <div class="social">
+            <a href="/"><i class="ph-3x ph-instagram-logo"></i></a>
+            <a href="/"><i class="ph-3x ph-linkedin-logo"></i></a>
+          </div>
         </section>
       </footer>
     </section>
@@ -90,19 +122,55 @@ export default class Default extends mixins(ScreenSizes) {
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
+    min-height: 145vh;
   }
 
   &.desktop .main-section {
     padding-top: $main-navigation-height-desktop;
   }
 
+  &.mobile .links {
+    align-items: baseline;
+    flex-direction: column;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $brown-base;
+    color: white;
+
+    &-logo {
+      max-width: 150px;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      padding: 4rem;
+      gap: 1rem;
+    }
+  }
+
   .copyright {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 1rem;
+    border-top: 2px solid white;
 
     .separator {
       color: $gray-base;
+    }
+
+    .social {
     }
 
     a:hover {

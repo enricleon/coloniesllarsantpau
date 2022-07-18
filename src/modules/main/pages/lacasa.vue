@@ -84,6 +84,10 @@ export default class TheHouse extends Vue {
     &-background {
       position: absolute;
       bottom: 0;
+
+      .mobile & {
+        display: none;
+      }
     }
   }
 }

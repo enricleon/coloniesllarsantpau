@@ -7,8 +7,12 @@
     <div class="content main" :class="`content--${$mq}`">
       <div class="contact__info">
         <sp-text class="font-medium" :importance="6" size="xs">Cèlia Comellas Guix</sp-text>
-        <sp-text class="font-medium" :importance="6" size="xs">info@coloniesllarsantpau.com</sp-text>
-        <sp-text class="font-medium" :importance="6" size="xs">654021143 / 972 721 270</sp-text>
+        <sp-text class="font-medium" :importance="6" size="xs">
+          <a href="mailto:info@coloniesllarsantpau.com">info@coloniesllarsantpau.com</a>
+        </sp-text>
+        <sp-text class="font-medium">
+          <a href="tel:654021143">654021143</a> / <a href="tel:972 721 270">972 721 270</a></sp-text
+        >
       </div>
     </div>
   </section>
