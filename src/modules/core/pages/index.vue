@@ -18,12 +18,12 @@
             </p>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Menjador.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Menjador.webp" />
           </template>
         </sp-text-article>
         <sp-text-article :gap="false" highlight="left">
           <template #left>
-            <img src="/photos/Llar_Sant_Pau_Piscina.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Piscina.webp" />
           </template>
           <template #right>
             <div class="small-houses__wrapper">
@@ -54,7 +54,7 @@
             </div>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Entorns.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Entorns.webp" />
           </template>
         </sp-text-article>
         <h2>On som?</h2>
