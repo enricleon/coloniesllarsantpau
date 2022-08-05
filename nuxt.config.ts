@@ -33,6 +33,9 @@ export default {
       },
     ],
   },
+  generate: {
+    dir: 'docs',
+  },
 
   /* nuxt.config.js */
   // Global CSS: https://go.nuxtjs.dev/config-css
