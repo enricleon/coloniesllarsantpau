@@ -1,0 +1,9 @@
+##########
+# URL VARIABLES
+#
+# site domain, full URL to the production location of your collection
+url: https://adriaroca.github.io
+# path to location on the domain if necessary e.g. /digital/hjccc
+baseurl: /coloniesllarsantpau
+# location of code, the full url to your github repository
+source-code: https://github.com/adriaroca/coloniesllarsantpau
