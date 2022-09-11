@@ -104,6 +104,10 @@ export default class HomePage extends mixins(ScreenSizes) {}
   color: white;
   margin-top: calc(($main-navigation-height-desktop + 1px) * -1);
 
+  .mobile & {
+    margin-top: initial;
+  }
+
   &__lacasa {
     display: flex;
     flex-direction: column;
