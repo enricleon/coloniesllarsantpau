@@ -6,6 +6,8 @@ export default {
     host: '0.0.0.0', // default: localhost
   },
 
+  ssr: false,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Llar Sant Pau',

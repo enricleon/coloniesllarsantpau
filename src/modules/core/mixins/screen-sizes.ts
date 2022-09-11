@@ -8,9 +8,7 @@ export default class ScreenSizes extends Vue {
   public $vssWidth!: any;
 
   get isSmallScreen() {
-    // return this.$vssWidth < 1280 ? 'mobile' : 'desktop';
-    // return this.$device.isMobile;
-    return this.$screen.width < 1280;
+    return this.$screen.width < 1024 || this.$device.isMobile;
   }
 
   get responsiveClass() {
