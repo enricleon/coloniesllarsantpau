@@ -8,14 +8,14 @@
       <div class="services__grid">
         <div class="services__grid-item">
           <div class="services__grid-item__icon">
-            <img src="/icons/piscina.svg" />
+            <img src="icons/piscina.svg" />
           </div>
           <sp-text class="font-medium" :importance="6" size="xs">Piscina</sp-text>
         </div>
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/multiesports.svg" />
+              <img src="icons/multiesports.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs">Camp multiesports</sp-text>
           </div>
@@ -23,7 +23,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/porteria.svg" />
+              <img src="icons/porteria.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Porteria futbol </sp-text>
           </div>
@@ -31,7 +31,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/tobogan.svg" />
+              <img src="icons/tobogan.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Tobogan aquàtic </sp-text>
           </div>
@@ -39,7 +39,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/volleyball.svg" />
+              <img src="icons/volleyball.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Xarxa de volleyball </sp-text>
           </div>
@@ -47,7 +47,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/barbacoas.svg" />
+              <img src="icons/barbacoas.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Barbacoas </sp-text>
           </div>
@@ -55,7 +55,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/wifi.svg" />
+              <img src="icons/wifi.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Wifi i projector </sp-text>
           </div>
@@ -63,7 +63,7 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/basquet.svg" />
+              <img src="icons/basquet.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Cistella de bàsquet </sp-text>
           </div>
@@ -71,13 +71,13 @@
         <div>
           <div class="services__grid-item">
             <div class="services__grid-item__icon">
-              <img src="/icons/musica.svg" />
+              <img src="icons/musica.svg" />
             </div>
             <sp-text class="font-medium" :importance="6" size="xs"> Equip de música </sp-text>
           </div>
         </div>
       </div>
-      <img class="services-background" src="/services-background.svg" />
+      <img class="services-background" src="services-background.svg" />
     </div>
   </section>
 </template>
