@@ -55,6 +55,13 @@ and limitations under the License.
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 
+/**
+  * Hopper 0.3.4
+  * (c) 2019
+    * @license MIT
+    */
+
+
 /*!
   * vue-router v3.5.3
   * (c) 2021 Evan You
@@ -79,10 +86,3 @@ and limitations under the License.
  * (c) 2021 Evan You
  * @license MIT
  */
-
-
-/**
-  * Hopper 0.3.4
-  * (c) 2019
-    * @license MIT
-    */
