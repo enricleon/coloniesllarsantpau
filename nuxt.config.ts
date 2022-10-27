@@ -129,6 +129,18 @@ export default {
     ],
   ],
 
+  redirect: [
+    {
+      // eslint-disable-next-line
+      from: '(?!^/$|^/[?].*$)(.*/[?](.*)$|.*/$)',
+      to: (from, req) => {
+        const base = req._parsedUrl.pathname.replace(/\/$/, '');
+        const search = req._parsedUrl.search;
+        return base + (search != null ? search : '');
+      },
+    },
+  ],
+
   i18n,
 
   styleResources: {
