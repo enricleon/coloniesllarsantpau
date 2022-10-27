@@ -8,6 +8,7 @@ export default {
   router: {
     base: '/coloniesllarsantpau/',
     trailingSlash: false,
+    middleware: 'trailingSlashRedirect',
   },
 
   ssr: false,
@@ -115,7 +116,6 @@ export default {
   modules: [
     '@nuxtjs/i18n',
     '@nuxt/image',
-    '@nuxtjs/redirect-module',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     [
@@ -127,18 +127,6 @@ export default {
         },
       },
     ],
-  ],
-
-  redirect: [
-    {
-      // eslint-disable-next-line
-      from: '(?!^/$|^/[?].*$)(.*/[?](.*)$|.*/$)',
-      to: (from, req) => {
-        const base = req._parsedUrl.pathname.replace(/\/$/, '');
-        const search = req._parsedUrl.search;
-        return base + (search != null ? search : '');
-      },
-    },
   ],
 
   i18n,
