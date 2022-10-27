@@ -89,7 +89,7 @@ export default class Default extends mixins(ScreenSizes) {
       {
         name: '',
         url: '/',
-        imageUrl: '/logo/logo-inverted.svg',
+        imageUrl: 'logo/logo-inverted.svg',
         containerClass: 'homepage blue',
       },
       {
