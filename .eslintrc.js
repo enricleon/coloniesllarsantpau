@@ -20,6 +20,12 @@ module.exports = {
     '@typescript-eslint/no-parameter-properties': 0,
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'vue/order-in-components': [
       'error',
       {

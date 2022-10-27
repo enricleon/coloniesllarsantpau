@@ -5,6 +5,11 @@ export default {
     port: 8080, // default: 3000
     host: '0.0.0.0', // default: localhost
   },
+  router: {
+    base: '/coloniesllarsantpau/',
+  },
+
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -32,6 +37,9 @@ export default {
         href: '/favicon.ico',
       },
     ],
+  },
+  generate: {
+    dir: 'docs',
   },
 
   /* nuxt.config.js */
@@ -69,11 +77,16 @@ export default {
     '@nuxt/postcss8',
     '@nuxtjs/svg',
     '@nuxtjs/style-resources',
+    '@nuxtjs/device',
     ['nuxt-mq'],
   ],
 
+  device: {
+    refreshOnResize: true,
+  },
+
   mq: {
-    defaultBreakpoint: 'sm',
+    defaultBreakpoint: 'lg',
     breakpoints: {
       xs: 450,
       sm: 786,

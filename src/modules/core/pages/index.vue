@@ -1,16 +1,16 @@
 <template>
   <section class="content-wrapper homepage">
-    <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false">
+    <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false" :mouse-drag="false">
       <slide>
         <div class="slide">
-          <h1 class="slide__title font-titles" :class="`slide__title--${$mq}`">Llar Sant Pau</h1>
-          <img src="/photos/Llar_Sant_Pau_Exterior_Masia.jpg" />
+          <sp-text class="slide__title font-titles fade-in-text" :importance="1" size="xxl">Llar Sant Pau</sp-text>
+          <img class="fade-in-image" src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
         </div>
       </slide>
     </hooper>
     <div class="content" :class="`content--${$mq}`">
       <section class="homepage__lacasa">
-        <text-article class="homepage__lacasa-first" highlight="right">
+        <sp-text-article class="homepage__lacasa-first" highlight="right">
           <template #left>
             <p class="homepage__lacasa-first__text">
               La casa de colònies LLar Sant Pau és una antiga rectoria que es troba situada a les afores del poble de
@@ -18,20 +18,22 @@
             </p>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Menjador.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Menjador.webp" />
           </template>
-        </text-article>
-        <text-article :gap="false" highlight="left">
+        </sp-text-article>
+        <sp-text-article :gap="false" highlight="left">
           <template #left>
-            <img src="/photos/Llar_Sant_Pau_Piscina.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Piscina.webp" />
           </template>
           <template #right>
-            <div class="small-hosues">
-              <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
+            <div class="small-houses__wrapper">
+              <div class="small-hosues">
+                <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
+              </div>
             </div>
           </template>
-        </text-article>
-        <text-article class="homepage__lacasa-last" highlight="right">
+        </sp-text-article>
+        <sp-text-article class="homepage__lacasa-last" highlight="right">
           <template #left>
             <div class="homepage__lacasa-last__text">
               <p>
@@ -52,11 +54,11 @@
             </div>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Entorns.jpg" />
+            <img src="/photos/Llar_Sant_Pau_Entorns.webp" />
           </template>
-        </text-article>
+        </sp-text-article>
+        <h2>On som?</h2>
       </section>
-      <h2>On som?</h2>
     </div>
     <img src="/photos/map.png" />
   </section>
@@ -79,11 +81,32 @@ export default class HomePage extends mixins(ScreenSizes) {}
 </script>
 
 <style lang="scss" scoped>
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-image {
+  animation: fadeIn 0.3s;
+}
+.fade-in-text {
+  animation: fadeIn 0.6s;
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
-  background: $color-primary;
+  background: var(--color-primary);
   color: white;
+  margin-top: calc(($main-navigation-height-desktop + 1px) * -1);
+
+  .mobile & {
+    margin-top: initial;
+  }
 
   &__lacasa {
     display: flex;
@@ -101,8 +124,13 @@ export default class HomePage extends mixins(ScreenSizes) {}
       }
     }
 
+    .small-houses__wrapper {
+      position: relative;
+      flex: 1;
+    }
+
     .small-hosues {
-      display: flex;
+      display: none;
       flex-direction: row;
       align-items: flex-end;
       gap: 1rem;
@@ -128,6 +156,7 @@ export default class HomePage extends mixins(ScreenSizes) {}
       }
 
       .small-hosues {
+        display: flex;
         position: absolute;
         bottom: 0;
         left: 1rem;
@@ -137,39 +166,25 @@ export default class HomePage extends mixins(ScreenSizes) {}
 }
 
 .slider {
-  height: auto;
+  height: 1500px;
+  max-height: 66vw;
 
   .slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 1150px;
+    height: 1500px;
+    max-height: 66vw;
 
     &__title {
       color: white;
-      font-size: 4rem;
       position: absolute;
       width: 100%;
       display: flex;
       justify-content: center;
+      z-index: 1;
 
-      &--sm {
-        font-size: 6rem;
-      }
-
-      &--md {
-        font-size: 8rem;
-      }
-
-      &--lg {
-        font-size: 10rem;
-      }
-
-      &--xl {
-        font-size: 12rem;
-      }
-
-      &--desktop {
+      .desktop & {
         margin-top: 160px;
       }
     }

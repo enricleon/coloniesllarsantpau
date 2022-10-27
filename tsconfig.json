@@ -25,6 +25,7 @@
       "@types/node",
       "@types/jest",
       "@nuxt/image",
+      "@nuxtjs/device",
       "vue-toastification/nuxt",
       "nuxt-leaflet"
     ]

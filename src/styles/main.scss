@@ -46,8 +46,12 @@
 }
 
 .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 1.25rem;
   overflow: hidden;
+  position: relative;
 
   &--sm {
     padding: 2rem 2.5rem;
@@ -72,20 +76,33 @@
   align-items: center;
 }
 
+$themes: (
+  red: (
+    'color-primary': $red-base,
+    'color-secondary': $blue-base,
+  ),
+  blue: (
+    'color-primary': $blue-base,
+    'color-secondary': $yellow-base,
+  ),
+  yellow: (
+    'color-primary': $yellow-base,
+    'color-secondary': $blue-base,
+  ),
+  green: (
+    'color-primary': $green-base,
+    'color-secondary': $yellow-base,
+  ),
+);
+
+@each $name, $map in $themes {
+  .theme-llarsantpau--#{'' + $name} {
+    @each $key, $value in $map {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
 .theme-llarsantpau {
-  --color-primary: #{hexToRGBString($color-primary)};
-  --color-secondary: #{hexToRGBString($color-secondary)};
-  // --color-accent: #{hexToRGBString($color-accent)};
-
-  .color-primary {
-    color: $color-primary;
-  }
-
-  .color-secondary {
-    color: $color-secondary;
-  }
-
-  // .color-accent {
-  //   color: var(--color-accent);
-  // }
+  background-color: var(--color-primary);
 }

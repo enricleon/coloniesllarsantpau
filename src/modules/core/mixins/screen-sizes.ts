@@ -5,8 +5,10 @@ const smallScreens = ['xs', 'sm', 'md'];
 
 @Component
 export default class ScreenSizes extends Vue {
+  public $vssWidth!: any;
+
   get isSmallScreen() {
-    return smallScreens.includes(this.$mq);
+    return this.$screen.width < 1024 || this.$device.isMobile;
   }
 
   get responsiveClass() {

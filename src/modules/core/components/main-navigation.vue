@@ -2,9 +2,9 @@
   <div>
     <div class="main-navigation">
       <i v-show="isSmallScreen" class="toggle-menu ph-xl ph-list" @click="toggleMenuVisibility()"></i>
-      <section class="navigation-links font-menu" :class="{ expanded: isVisibleMobileMenu }">
+      <section class="navigation-links font-medium" :class="{ expanded: isVisibleMobileMenu }">
         <i v-show="isVisibleMobileMenu" class="close-menu ph-3x ph-x" @click="toggleMenuVisibility()"></i>
-        <slot></slot>
+        <slot :close-navigation="toggleMenuVisibility"></slot>
       </section>
     </div>
   </div>
@@ -20,7 +20,9 @@ export default class MainNavigation extends mixins(ScreenSizes) {
   public isVisibleMobileMenu: boolean = false;
 
   toggleMenuVisibility() {
-    this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+    if (this.isSmallScreen) {
+      this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+    }
   }
 }
 </script>
@@ -33,7 +35,7 @@ export default class MainNavigation extends mixins(ScreenSizes) {
   justify-content: center;
   align-items: center;
   height: 10rem;
-  z-index: 1;
+  z-index: 2;
 
   .mobile & {
     position: relative;

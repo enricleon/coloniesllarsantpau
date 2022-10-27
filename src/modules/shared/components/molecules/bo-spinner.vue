@@ -17,7 +17,7 @@ export default class BoSpinner extends Vue {}
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border-left-color: $color-secondary;
+  border-left-color: var(--color-secondary);
 
   animation: spin 1s ease infinite;
 }

@@ -20,7 +20,7 @@ module.exports = {
       fontFamily: {
         titles: ['QueensTrial', 'sans-serif'],
         footer: ['QueensVarTrial', 'sans-serif'],
-        menu: ['AeonikMedium', 'sans'],
+        medium: ['AeonikMedium', 'sans'],
         sans: ['Aeonik', 'sans'],
         mono: ['Poppins', 'sans'],
       },
