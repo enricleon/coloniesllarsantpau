@@ -3,7 +3,7 @@
     <hooper class="slider" :auto-play="true" :play-speed="5000" :wheel-control="false" :mouse-drag="false">
       <slide>
         <div class="slide">
-          <sp-text class="slide__title font-titles fade-in-text" :importance="1" size="xxl">Llar Sant Pau</sp-text>
+          <sp-text class="slide__title font-titles fade-in-text" :importance="1" size="xxl">Llar Sant Pau 2</sp-text>
           <img class="fade-in-image" src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
         </div>
       </slide>
