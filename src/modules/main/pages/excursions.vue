@@ -41,7 +41,7 @@ export default class Trekking extends Vue {
           del Capsacosta posen de manifest l’extraordinari treball de construcció realitzat 
           uns dos mil anys enrere.
         `,
-        imageUrl: '/photos/VIA ROMANA.png',
+        imageUrl: 'photos/VIA ROMANA.png',
       },
       {
         title: 'Ruta del Ferro i del Carbó',
@@ -51,7 +51,7 @@ export default class Trekking extends Vue {
           ideal per fer-la caminant, amb BTT. Antic traçat de ferrocarril anomenat així perquè antigament 
           era utilitzat per transportar el carbó que s’extreia de la mines veïnes d’Ogassa. 
           L’inici de la ruta es troba a uns 10 km de la casa de colònies.`,
-        imageUrl: '/photos/ruta_del_ferro13.png',
+        imageUrl: 'photos/ruta_del_ferro13.png',
       },
       {
         title: 'Vall de Camprodon',
@@ -60,7 +60,7 @@ export default class Trekking extends Vue {
           Camprodon té una tradició de molts anys dins el món excursionista i del turisme, 
           el seu vell paisatge convida a fer llargues caminades i el seu clima d’abundants 
           neus a l’hivern per els practicants del esquí, fa que sigui un lloc idoni per el turista.`,
-        imageUrl: '/photos/escapada-a-camprodon.png',
+        imageUrl: 'photos/escapada-a-camprodon.png',
       },
       {
         title: 'Vallter 2000',
@@ -71,7 +71,7 @@ export default class Trekking extends Vue {
           A l’estiu també ens acollirà com a punt de partida per a diverses excursions als pics més 
           emblemàtics de la zona.
           Trekking, BTT, esquí…`,
-        imageUrl: '/photos/vallter-2000-panoramica-ivan-sanz.png',
+        imageUrl: 'photos/vallter-2000-panoramica-ivan-sanz.png',
       },
       {
         title: 'Molló Parc',
@@ -81,7 +81,7 @@ export default class Trekking extends Vue {
           Veniu i passegeu  per la natura veient ossos, marmotes, linx, llops, daines… més de 30 espècies 
           d’animals diferents propis del Pirineu Català en el seu entorn natural.
         `,
-        imageUrl: '/photos/c870x524.png',
+        imageUrl: 'photos/c870x524.png',
       },
     ];
   }

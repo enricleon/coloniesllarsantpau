@@ -2,9 +2,9 @@
   <section class="content-wrapper thehouse">
     <app-bar>La casa</app-bar>
     <div class="thehouse__content">
-      <sp-photo-text title="Planta Baixa" image-url="/photos/Llar_Sant_Pau_Entrada.webp"></sp-photo-text>
-      <sp-photo-text title="Primer pis" image-url="/photos/Llar_Sant_Pau_Habitacio_28.webp"></sp-photo-text>
-      <sp-photo-text title="Segon pis" image-url="/photos/Llar_Sant_Pau_Habitacio_26.webp"></sp-photo-text>
+      <sp-photo-text title="Planta Baixa" image-url="photos/Llar_Sant_Pau_Entrada.webp"></sp-photo-text>
+      <sp-photo-text title="Primer pis" image-url="photos/Llar_Sant_Pau_Habitacio_28.webp"></sp-photo-text>
+      <sp-photo-text title="Segon pis" image-url="photos/Llar_Sant_Pau_Habitacio_26.webp"></sp-photo-text>
     </div>
     <div class="content" :class="`content--${$mq}`">
       <sp-text-article class="thehouse__description">

@@ -4,7 +4,7 @@
       <slide>
         <div class="slide">
           <sp-text class="slide__title font-titles fade-in-text" :importance="1" size="xxl">Llar Sant Pau 2</sp-text>
-          <img class="fade-in-image" src="/photos/Llar_Sant_Pau_Exterior_Masia.webp" />
+          <img class="fade-in-image" src="photos/Llar_Sant_Pau_Exterior_Masia.webp" />
         </div>
       </slide>
     </hooper>
@@ -18,17 +18,17 @@
             </p>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Menjador.webp" />
+            <img src="photos/Llar_Sant_Pau_Menjador.webp" />
           </template>
         </sp-text-article>
         <sp-text-article :gap="false" highlight="left">
           <template #left>
-            <img src="/photos/Llar_Sant_Pau_Piscina.webp" />
+            <img src="photos/Llar_Sant_Pau_Piscina.webp" />
           </template>
           <template #right>
             <div class="small-houses__wrapper">
               <div class="small-hosues">
-                <img v-for="index in 10" :key="index" src="/logo/logo-without-circle.svg" />
+                <img v-for="index in 10" :key="index" src="logo/logo-without-circle.svg" />
               </div>
             </div>
           </template>
@@ -54,13 +54,13 @@
             </div>
           </template>
           <template #right>
-            <img src="/photos/Llar_Sant_Pau_Entorns.webp" />
+            <img src="photos/Llar_Sant_Pau_Entorns.webp" />
           </template>
         </sp-text-article>
         <h2>On som?</h2>
       </section>
     </div>
-    <img src="/photos/map.png" />
+    <img src="photos/map.png" />
   </section>
 </template>
 
