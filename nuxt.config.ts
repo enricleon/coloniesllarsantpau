@@ -7,6 +7,7 @@ export default {
   },
   router: {
     base: '/coloniesllarsantpau/',
+    trailingSlash: false,
   },
 
   ssr: false,
