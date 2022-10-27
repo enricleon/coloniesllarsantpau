@@ -65,8 +65,14 @@ import ScreenSizes from '@/modules/core/mixins/screen-sizes';
 @Component
 export default class Default extends mixins(ScreenSizes) {
   get containerClass() {
+    console.log('Check this.$route.fullPath:');
+    console.log(this.$route.fullPath);
+
     const navigationItem = this.navigationItems.find((item) => item.url === this.$route.fullPath);
-    return navigationItem?.containerClass.split(' ');
+
+    console.log('Check navigationItem?.containerClass');
+    console.log(navigationItem?.containerClass);
+    return navigationItem?.containerClass.split(' ') || [];
   }
 
   get navigationItems() {
