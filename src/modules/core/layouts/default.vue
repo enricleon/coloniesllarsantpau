@@ -16,7 +16,7 @@
       <footer class="footer">
         <section class="content links">
           <div class="links__item">
-            <img class="footer-logo" src="/logo/logo-circle-text.png" />
+            <img class="footer-logo" src="logo/logo-circle-text.png" />
           </div>
           <div class="links__item">
             <sp-text class="font-titles">Info</sp-text>
